@@ -15,9 +15,6 @@ export const openAppsStore = atom<Record<AppID, boolean>>({
   facetime: false,
   calendar: false,
   'system-preferences': false,
-
-  'purus-twitter': true,
-  'view-source': true,
 });
 
 /** Which app is currently focused */
