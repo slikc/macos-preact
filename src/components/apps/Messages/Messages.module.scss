@@ -1,0 +1,258 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #f2f2f7;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.titleBar {
+  height: 22px;
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.sidebar {
+  width: 300px;
+  border-right: 1px solid #e6e6e6;
+  height: 100%;
+  overflow-y: auto;
+  background-color: #ffffff;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+}
+
+.mainArea {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.chatArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #e6e6e6;
+  background-color: #ffffff;
+  
+  .contactInfo {
+    display: flex;
+    flex-direction: column;
+    
+    .contactName {
+      font-weight: 600;
+      font-size: 16px;
+    }
+  }
+}
+
+.searchBar {
+  padding: 10px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e6e6e6;
+  
+  input {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: #e9e9eb;
+    font-size: 14px;
+    outline: none;
+    color: #333;
+    
+    &::placeholder {
+      color: #8e8e93;
+    }
+  }
+}
+
+.conversationList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  
+  .conversationItem {
+    padding: 10px 15px;
+    display: flex;
+    cursor: pointer;
+    
+    &:hover {
+      background-color: #f2f2f7;
+    }
+    
+    &.active {
+      background-color: #d1d1d6;
+    }
+    
+    .avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      background-color: #e9e9eb;
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #666;
+      font-size: 18px;
+    }
+    
+    .conversationInfo {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      
+      .topRow {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 5px;
+        
+        .contactName {
+          font-weight: 600;
+          color: #000;
+          font-size: 14px;
+        }
+        
+        .date {
+          font-size: 12px;
+          color: #8e8e93;
+        }
+      }
+      
+      .lastMessage {
+        color: #8e8e93;
+        font-size: 13px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+
+.messagesContainer {
+  flex: 1;
+  padding: 10px 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column-reverse;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+  }
+}
+
+.messageList {
+  display: flex;
+  flex-direction: column;
+}
+
+.messageGroup {
+  margin-bottom: 15px;
+  
+  .timestamp {
+    text-align: center;
+    margin: 15px 0;
+    color: #8e8e93;
+    font-size: 12px;
+  }
+}
+
+.message {
+  max-width: 65%;
+  padding: 8px 12px;
+  border-radius: 18px;
+  margin-bottom: 2px;
+  font-size: 15px;
+  position: relative;
+  
+  &.sent {
+    align-self: flex-end;
+    background-color: #0b93f6;
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 4px;
+    
+    &:last-child {
+      border-bottom-right-radius: 18px;
+    }
+  }
+  
+  &.received {
+    align-self: flex-start;
+    background-color: #e9e9eb;
+    color: black;
+    border-bottom-left-radius: 4px;
+    
+    &:last-child {
+      border-bottom-left-radius: 18px;
+    }
+  }
+
+  .siriTag {
+    font-size: 12px;
+    color: #8e8e93;
+    margin-top: 2px;
+  }
+}
+
+.inputArea {
+  padding: 10px 20px;
+  border-top: 1px solid #e6e6e6;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  
+  .inputField {
+    flex: 1;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 15px;
+    font-size: 15px;
+    background-color: #e9e9eb;
+    outline: none;
+    resize: none;
+    max-height: 120px;
+    min-height: 35px;
+    
+    &::placeholder {
+      color: #8e8e93;
+    }
+  }
+  
+  .sendButton {
+    margin-left: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #0b93f6;
+    font-weight: bold;
+    font-size: 15px;
+  }
+} 

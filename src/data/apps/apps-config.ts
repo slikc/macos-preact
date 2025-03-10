@@ -17,9 +17,11 @@ export const appsConfig = {
   vscode: vscodeAppConfig,
   finder: finderAppConfig,
   safari: safariAppConfig,
-  messages: messagesAppConfig,
   mail: mailAppConfig,
   photos: photosAppConfig,
   facetime: facetimeAppConfig,
+  messages: messagesAppConfig,
+
+  // launchpad: launchpadAppConfig,
   'system-preferences': systemPreferencesAppConfig,
 };

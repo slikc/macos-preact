@@ -1,5 +1,6 @@
 import { mdiApple } from '@mdi/js';
 import clsx from 'clsx';
+import { h } from 'preact';
 import { useState } from 'preact/hooks';
 import { useTimeout } from '__/hooks';
 import { AppIcon } from '../utils/AppIcon';
@@ -13,17 +14,17 @@ export const StartupChime = () => {
   }, 3000);
 
   return (
-    <>
+    <div>
       <div
         class={clsx({
           [css.splashScreen]: true,
-          [css.hidden]: hiddenSplashScreen || import.meta.env.DEV
+          [css.hidden]: hiddenSplashScreen || import.meta.env.DEV,
         })}
         hidden={hiddenSplashScreen}
       >
         <AppIcon path={mdiApple} fill="white" size={100} />
       </div>
-      <audio hidden autoPlay={import.meta.env.PROD} src="/assets/sounds/mac-startup-sound.mp3" />
-    </>
+      <audio hidden autoPlay={import.meta.env.PROD} src="/" />
+    </div>
   );
 };
